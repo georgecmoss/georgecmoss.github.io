@@ -10,9 +10,9 @@
     if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
   })();
 </script>
-<title>Resources | George Moss</title>
-<meta name="description" content="How George Moss learns, and what he's reading, books, habits, and a running reading list.">
-<link rel="canonical" href="https://georgecmoss.github.io/resources.html">
+<title>Now | George Moss</title>
+<meta name="description" content="What George Moss is focused on right now.">
+<link rel="canonical" href="https://georgecmoss.github.io/now.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -37,8 +37,8 @@
         <li><a href="index.html#radar">On My Radar</a></li>
         <li><a href="index.html#writing">Writing</a></li>
         <li><a href="index.html#work">Work</a></li>
-        <li><a href="resources.html" aria-current="page">Resources</a></li>
-        <li><a href="now.html">Now</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="now.html" aria-current="page">Now</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
@@ -54,48 +54,28 @@
 </header>
 
 <main id="main">
-
-  <section class="hero" style="padding: 5rem 1.5rem 3.5rem;">
-    <p class="eyebrow">Resources</p>
-    <h1 class="hero-name" style="font-size: clamp(2.75rem, 7vw, 4.5rem);">How I learn, what I read</h1>
-    <p class="hero-role">A living page of how I try to keep learning, plus what's currently on my shelf.</p>
+  <section class="hero" style="padding: 5rem 1.5rem 3.5rem; min-height: auto;">
+    <p class="eyebrow">Now</p>
+    <h1 class="hero-name" style="font-size: clamp(2.75rem, 7vw, 4.5rem);">What I'm focused on</h1>
+    <p class="hero-role">A snapshot, not an archive. Updated whenever something changes.</p>
     <div class="current-line" role="presentation" aria-hidden="true">
       <span class="current-dot"></span>
     </div>
   </section>
 
-  <section class="section section-light" id="how-i-learn">
+  <section class="section section-light">
     <div class="section-inner section-inner-narrow">
-      <p class="eyebrow eyebrow-dark">How I Learn</p>
-      <h2 class="section-title">A few habits that stick</h2>
-      <!-- Replace this with your real approach -->
-      <div class="about-copy">
-        <p>I learn best by writing about what I'm trying to understand, which is a big part of why I keep two newsletters going. Turning a half-formed idea into a few paragraphs forces me to actually figure out what I think.</p>
-        <p>Outside of that: a short daily reading habit (industry news plus a book on the go), conversations with people doing the work firsthand through mentoring and volunteering, and revisiting notes rather than just taking them.</p>
-      </div>
+      <!-- Edit this list whenever your focus shifts. Update the date below too. -->
+      <ul class="now-list">
+        <li><strong>Work.</strong> Leading energy transition program work at EY as a Manager, based out of London.</li>
+        <li><strong>Writing.</strong> Keeping a steady rhythm on Energy at the Edge and G &amp; The World.</li>
+        <li><strong>Volunteering.</strong> Regular sessions with Migrateful.</li>
+        <li><strong>Learning.</strong> See <a href="index.html#radar">On My Radar</a> for what's currently got my attention.</li>
+        <li><strong>Reading.</strong> Whatever's newest on my <a href="resources.html">reading list</a>.</li>
+      </ul>
+      <p class="now-updated">Last updated: August 2026</p>
     </div>
   </section>
-
-  <section class="section section-dark" id="reading-list">
-    <div class="section-inner">
-      <p class="eyebrow">Reading List</p>
-      <h2 class="section-title section-title-light">What I'm reading</h2>
-      <p class="section-lede">A few recent favorites, updated occasionally. See my full shelf on Goodreads for everything else.</p>
-
-      <!-- Auto-pulled from your Goodreads "read" shelf. Falls back to a static note if the feed can't load. -->
-      <div class="radar-grid" id="feed-goodreads" data-goodreads-id="108052990" data-goodreads-shelf="read">
-        <div class="radar-item" style="border-color: rgba(161,98,7,0.25);">
-          <h3>Loading your recent reads...</h3>
-          <p>Pulling the latest from your Goodreads shelf.</p>
-        </div>
-      </div>
-
-      <p class="contact-alt" style="margin-top: 2.5rem;">
-        See everything I'm reading on <a href="https://www.goodreads.com/user/show/108052990-g-m" target="_blank" rel="noopener">Goodreads &rarr;</a>
-      </p>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">
