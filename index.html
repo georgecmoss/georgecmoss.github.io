@@ -3,11 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
 <title>George Moss | Energy Transition Consultant &amp; Writer</title>
 <meta name="description" content="George Moss is an energy transition consultant and writer based in London, UK, working across utilities, clean energy strategy, and the future of the grid.">
 <meta name="robots" content="index, follow">
 
-<!-- IMPORTANT: replace this with your real published URL once it's live -->
 <link rel="canonical" href="https://georgecmoss.github.io/">
 
 <!-- Open Graph / social sharing -->
@@ -50,9 +56,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<!-- Analytics: GoatCounter (free, no cookies/signup wall). Sign up at goatcounter.com,
-     then replace YOUR-CODE below with the subdomain code they give you. -->
-<script data-goatcounter="https://YOUR-CODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<!-- Analytics: GoatCounter -->
+<script data-goatcounter="https://georgecmoss.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -61,16 +66,24 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
     <a class="nav-mark" href="#top">GM</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
-      <span class="sr-only">Menu</span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#writing">Writing</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#radar">On My Radar</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -126,6 +139,34 @@
     </div>
   </section>
 
+  <section class="section section-light" id="radar">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow-dark">On My Radar</p>
+      <h2 class="section-title">What's catching my eye lately</h2>
+      <p class="section-lede section-lede-dark">A running, occasionally-updated list of what I'm reading up on and thinking about.</p>
+
+      <!-- Swap these four for whatever you're actually into right now. Each one is just a topic + a line on why. -->
+      <div class="radar-grid">
+        <div class="radar-item">
+          <h3>Grid flexibility markets</h3>
+          <p>How utilities are pricing and procuring demand flexibility as distributed energy resources scale.</p>
+        </div>
+        <div class="radar-item">
+          <h3>UK vs. US EV policy</h3>
+          <p>Comparing incentive design and charging infrastructure rollout on either side of the Atlantic.</p>
+        </div>
+        <div class="radar-item">
+          <h3>15-minute cities &amp; urban livability</h3>
+          <p>What makes a neighborhood actually walkable, and where London gets it right.</p>
+        </div>
+        <div class="radar-item">
+          <h3>Personal finance for expats</h3>
+          <p>Navigating investing and tax across two countries after the move to London.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-dark" id="writing">
     <div class="section-inner">
       <p class="eyebrow">Writing</p>
@@ -158,30 +199,48 @@
       <p class="section-lede section-lede-dark">A few highlights, more case studies coming soon.</p>
 
       <div class="work-list">
-        <article class="work-item">
-          <div class="work-item-head">
+        <details class="work-item" open>
+          <summary class="work-item-head">
             <h3>EY, Energy Transition Consulting</h3>
             <span class="work-item-tag">2021&ndash;Present</span>
+          </summary>
+          <div class="work-item-body">
+            <p>I work within EY's Customer practice on the energy transition, leading program design, portfolio strategy, and market analysis for utilities, manufacturers, and government clients as they build out clean energy and customer programs.</p>
+            <ul class="work-tags">
+              <li>Program Design</li>
+              <li>Portfolio Strategy</li>
+              <li>Market Analysis</li>
+              <li>Clean Energy Programs</li>
+            </ul>
           </div>
-          <p>I work within EY's Customer practice on the energy transition, leading program design, portfolio strategy, and market analysis for utilities, manufacturers, and government clients as they build out clean energy and customer programs.</p>
-        </article>
+        </details>
 
-        <article class="work-item">
-          <div class="work-item-head">
+        <details class="work-item">
+          <summary class="work-item-head">
             <h3>Blue Ridge ESG Seminar</h3>
             <span class="work-item-tag">UVA McIntire</span>
+          </summary>
+          <div class="work-item-body">
+            <p>Featured in a McIntire School of Commerce seminar exploring responsible business strategies and ESG.</p>
+            <a class="work-item-link" href="https://experience.mcintire.virginia.edu/news/blue-ridge-esg-seminar-explores-responsible-business-strategies/" target="_blank" rel="noopener">Read more &rarr;</a>
           </div>
-          <p>Featured in a McIntire School of Commerce seminar exploring responsible business strategies and ESG.</p>
-          <a class="work-item-link" href="https://experience.mcintire.virginia.edu/news/blue-ridge-esg-seminar-explores-responsible-business-strategies/" target="_blank" rel="noopener">Read more &rarr;</a>
-        </article>
+        </details>
 
-        <article class="work-item">
-          <div class="work-item-head">
+        <details class="work-item">
+          <summary class="work-item-head">
             <h3>Mentoring &amp; Leadership</h3>
             <span class="work-item-tag">Ongoing</span>
+          </summary>
+          <div class="work-item-body">
+            <p>Fellow with the Clean Energy Leadership Institute (curriculum &amp; selections committee), mentor with Young Professionals in Energy, college coach with Minds Matter, and volunteer at Migrateful.</p>
+            <ul class="work-tags">
+              <li>Clean Energy Leadership Institute</li>
+              <li>Young Professionals in Energy</li>
+              <li>Minds Matter</li>
+              <li>Migrateful</li>
+            </ul>
           </div>
-          <p>Fellow with the Clean Energy Leadership Institute (curriculum &amp; selections committee), mentor with Young Professionals in Energy, college coach with Minds Matter, and volunteer at Migrateful.</p>
-        </article>
+        </details>
       </div>
     </div>
   </section>
@@ -196,6 +255,7 @@
         <input type="hidden" name="_subject" value="New message from georgemoss.com">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://georgecmoss.github.io/thank-you.html">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="form-row">

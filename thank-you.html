@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+<title>Message sent | George Moss</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Analytics: GoatCounter -->
+<script data-goatcounter="https://georgecmoss.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <section class="hero" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
+    <p class="eyebrow">Message sent</p>
+    <h1 class="hero-name" style="font-size: clamp(2.5rem, 7vw, 4rem);">Thanks for reaching out.</h1>
+    <p class="hero-role">I read every message and usually reply within a few days. In the meantime, feel free to check out my writing.</p>
+    <div class="current-line" role="presentation" aria-hidden="true">
+      <span class="current-dot"></span>
+    </div>
+    <div class="hero-actions">
+      <a href="index.html" class="btn btn-primary">Back to homepage</a>
+      <a href="https://energyattheedge.substack.com/" target="_blank" rel="noopener" class="btn btn-ghost">Read Energy at the Edge</a>
+    </div>
+  </section>
+</body>
+</html>
