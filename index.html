@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>George Moss — Energy Transition Consultant &amp; Writer</title>
 <meta name="description" content="George Moss is an energy transition consultant and writer based in New York City, working across utilities, clean energy strategy, and the future of the grid.">
+<meta name="robots" content="index, follow">
+
+<!-- IMPORTANT: replace this with your real published URL once it's live -->
+<link rel="canonical" href="https://georgecmoss.github.io/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="George Moss — Energy Transition Consultant & Writer">
+<meta property="og:description" content="Energy transition consultant and writer based in New York City, working across utilities, clean energy strategy, and the future of the grid.">
+<meta property="og:image" content="https://georgecmoss.github.io/og-image.png">
+<meta property="og:url" content="https://georgecmoss.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="George Moss — Energy Transition Consultant & Writer">
+<meta name="twitter:description" content="Energy transition consultant and writer based in New York City, working across utilities, clean energy strategy, and the future of the grid.">
+<meta name="twitter:image" content="https://georgecmoss.github.io/og-image.png">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "George Moss",
+  "url": "https://georgecmoss.github.io/",
+  "jobTitle": "Senior Energy Transition Consultant",
+  "worksFor": { "@type": "Organization", "name": "EY" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Virginia" },
+  "address": { "@type": "PostalAddress", "addressLocality": "New York City", "addressRegion": "NY" },
+  "sameAs": [
+    "https://www.linkedin.com/in/georgecmoss/",
+    "https://energyattheedge.substack.com/",
+    "https://gandtheworld.substack.com/"
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<!-- Analytics: GoatCounter (free, no cookies/signup wall). Sign up at goatcounter.com,
+     then replace YOUR-CODE below with the subdomain code they give you. -->
+<script data-goatcounter="https://YOUR-CODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -34,6 +78,7 @@
 <main id="main">
 
   <section class="hero" id="top">
+    <img src="images/headshot.jpg" alt="George Moss" class="hero-photo" id="heroPhoto" onerror="this.style.display='none'">
     <p class="eyebrow">Energy Transition &mdash; New York City</p>
     <h1 class="hero-name">George Moss</h1>
     <p class="hero-role">I help utilities, regulators, and companies navigate the shift to a cleaner grid &mdash; and write about it on the side.</p>
@@ -89,18 +134,20 @@
       <p class="section-lede">One on the energy transition, one on everything else.</p>
 
       <div class="writing-grid">
-        <a class="writing-card" href="https://energyattheedge.substack.com/" target="_blank" rel="noopener">
+        <div class="writing-card">
           <span class="writing-kicker">Professional</span>
           <h3>Energy at the Edge</h3>
           <p>Notes on the energy transition &mdash; utilities, policy, markets, and where the grid is headed next.</p>
-          <span class="writing-link">Read on Substack &rarr;</span>
-        </a>
-        <a class="writing-card" href="https://gandtheworld.substack.com/" target="_blank" rel="noopener">
+          <ul class="writing-posts" id="feed-energy" data-feed="https://energyattheedge.substack.com/feed" aria-live="polite"></ul>
+          <a class="writing-link" href="https://energyattheedge.substack.com/" target="_blank" rel="noopener">Read on Substack &rarr;</a>
+        </div>
+        <div class="writing-card">
           <span class="writing-kicker">Personal</span>
           <h3>G &amp; The World</h3>
           <p>A more personal newsletter &mdash; life, travel, and whatever else is on my mind.</p>
-          <span class="writing-link">Read on Substack &rarr;</span>
-        </a>
+          <ul class="writing-posts" id="feed-gworld" data-feed="https://gandtheworld.substack.com/feed" aria-live="polite"></ul>
+          <a class="writing-link" href="https://gandtheworld.substack.com/" target="_blank" rel="noopener">Read on Substack &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
