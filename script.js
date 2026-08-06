@@ -16,12 +16,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
+
   loadLatestPosts();
 });
 
 // Pulls the latest posts from each Substack RSS feed via rss2json (a free
 // proxy that works around browsers blocking direct cross-site RSS requests).
-// If a feed fails to load, the card just falls back to its static copy —
+// If a feed fails to load, the card just falls back to its static copy,
 // nothing breaks.
 function loadLatestPosts() {
   var lists = document.querySelectorAll('.writing-posts[data-feed]');
