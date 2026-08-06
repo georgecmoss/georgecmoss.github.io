@@ -10,9 +10,9 @@
     if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
   })();
 </script>
-<title>Resources | George Moss</title>
-<meta name="description" content="How George Moss learns, and what he's reading, books, habits, and a running reading list.">
-<link rel="canonical" href="https://georgecmoss.github.io/resources.html">
+<title>Uses | George Moss</title>
+<meta name="description" content="The tools, apps, and gear George Moss uses day to day.">
+<link rel="canonical" href="https://georgecmoss.github.io/uses.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -37,8 +37,8 @@
         <li><a href="index.html#radar">On My Radar</a></li>
         <li><a href="index.html#writing">Writing</a></li>
         <li><a href="index.html#work">Work</a></li>
-        <li><a href="resources.html" aria-current="page">Resources</a></li>
-        <li><a href="uses.html">Uses</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="uses.html" aria-current="page">Uses</a></li>
         <li><a href="now.html">Now</a></li>
         <li><a href="coming-up.html">Coming Up</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
@@ -56,74 +56,50 @@
 </header>
 
 <main id="main">
-
-  <section class="hero" style="padding: 5rem 1.5rem 3.5rem;">
-    <p class="eyebrow">Resources</p>
-    <h1 class="hero-name" style="font-size: clamp(2.75rem, 7vw, 4.5rem);">How I learn, what I read</h1>
-    <p class="hero-role">A living page of how I try to keep learning, plus what's currently on my shelf.</p>
+  <section class="hero" style="padding: 5rem 1.5rem 3.5rem; min-height: auto;">
+    <p class="eyebrow">Uses</p>
+    <h1 class="hero-name" style="font-size: clamp(2.75rem, 7vw, 4.5rem);">What I use</h1>
+    <p class="hero-role">The tools, apps, and gear that actually get used day to day.</p>
     <div class="current-line" role="presentation" aria-hidden="true">
       <span class="current-dot"></span>
     </div>
   </section>
 
-  <section class="section section-light" id="how-i-learn">
+  <!-- Replace every item below with what you actually use. Keep the same
+       structure (h2 category, ul of items) and it'll stay styled correctly. -->
+  <section class="section section-light">
     <div class="section-inner section-inner-narrow">
-      <p class="eyebrow eyebrow-dark">How I Learn</p>
-      <h2 class="section-title">A few habits that stick</h2>
-      <!-- Edit this with your real approach -->
-      <div class="about-copy">
-        <p>I learn best by writing about what I'm trying to understand, which is a big part of why I keep two newsletters going. Turning a half-formed idea into a few paragraphs forces me to actually figure out what I think. The rest comes from a fairly steady set of routines:</p>
+
+      <div class="uses-group">
+        <h2 class="uses-heading">Hardware</h2>
+        <ul class="uses-list">
+          <li><strong>Phone.</strong> iPhone, reluctantly.</li>
+          <li><strong>Work laptop.</strong> MacBook.</li>
+          <li><strong>Home laptop.</strong> Lenovo.</li>
+        </ul>
       </div>
 
-      <ul class="cadence-list">
-        <li>
-          <span class="cadence-tag">Daily</span>
-          <p>Journaling, blogging, mindfulness, and exercise, with some vibe coding thrown in lately.</p>
-        </li>
-        <li>
-          <span class="cadence-tag">Weekly</span>
-          <p>A standing date night with my wife.</p>
-        </li>
-        <li>
-          <span class="cadence-tag">Monthly</span>
-          <p>Revisiting old journal entries, plus James Clear's newsletter.</p>
-        </li>
-        <li>
-          <span class="cadence-tag">Bi-annual</span>
-          <p>Budgeting, twice a year.</p>
-        </li>
-        <li>
-          <span class="cadence-tag">Yearly</span>
-          <p>A full review of the year.</p>
-        </li>
-      </ul>
-
-      <div class="about-copy">
-        <p>Outside of that structure: conversations with people doing the work firsthand, through mentoring and volunteering.</p>
+      <div class="uses-group">
+        <h2 class="uses-heading">Software &amp; apps</h2>
+        <ul class="uses-list">
+          <li><strong>Favorite app.</strong> Shared Photos, hands down.</li>
+          <li><strong>Writing &amp; reading.</strong> Substack, Goodreads.</li>
+          <li><strong>Tracking things.</strong> A handful of personal Google Sheets.</li>
+          <li><strong>Social.</strong> Just LinkedIn and Goodreads, nothing else.</li>
+        </ul>
       </div>
+
+      <div class="uses-group">
+        <h2 class="uses-heading">For work</h2>
+        <ul class="uses-list">
+          <li><strong>AI tools.</strong> Using Copilot more and more, and just started with Claude this month.</li>
+          <li><strong>Slides.</strong> PowerPoint, my strongest tool by far.</li>
+          <li><strong>Currently learning.</strong> R and data science, a work in progress.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
-
-  <section class="section section-dark" id="reading-list">
-    <div class="section-inner">
-      <p class="eyebrow">Reading List</p>
-      <h2 class="section-title section-title-light">What I'm reading</h2>
-      <p class="section-lede">A few recent favorites, updated occasionally. See my full shelf on Goodreads for everything else.</p>
-
-      <!-- Auto-pulled from your Goodreads "read" shelf. Falls back to a static note if the feed can't load. -->
-      <div class="radar-grid" id="feed-goodreads" data-goodreads-id="108052990" data-goodreads-shelf="read">
-        <div class="radar-item" style="border-color: rgba(161,98,7,0.25);">
-          <h3>Loading your recent reads...</h3>
-          <p>Pulling the latest from your Goodreads shelf.</p>
-        </div>
-      </div>
-
-      <p class="contact-alt" style="margin-top: 2.5rem;">
-        See everything I'm reading on <a href="https://www.goodreads.com/user/show/108052990-g-m" target="_blank" rel="noopener">Goodreads &rarr;</a>
-      </p>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">

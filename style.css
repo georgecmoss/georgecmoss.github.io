@@ -590,6 +590,28 @@ a.radar-item:hover {
 }
 .contact-alt a:hover { text-decoration: underline; }
 
+.qr-block {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(161, 98, 7, 0.2);
+}
+.qr-block img {
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.qr-block p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--cream-text-dim);
+  max-width: 28ch;
+}
+@media (max-width: 480px) {
+  .qr-block { flex-direction: column; align-items: flex-start; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--ink);
@@ -624,6 +646,72 @@ a.radar-item:hover {
   color: var(--cream-text-dim);
 }
 .footer-links a:hover { color: var(--amber-bright); }
+
+/* ---------- Resources: cadence list ---------- */
+.cadence-list {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.cadence-list li {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--paper-dim);
+}
+.cadence-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.cadence-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  white-space: nowrap;
+}
+.cadence-list p {
+  margin: 0;
+  color: var(--paper-ink-soft);
+}
+@media (max-width: 480px) {
+  .cadence-list li { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+
+/* ---------- Uses page ---------- */
+.uses-group {
+  margin-bottom: 2.5rem;
+}
+.uses-heading {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--paper-dim);
+}
+.uses-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.uses-list li {
+  font-size: 1rem;
+  color: var(--paper-ink-soft);
+}
+.uses-list strong {
+  color: var(--paper-ink);
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
 
 /* ---------- Now page ---------- */
 .now-list {
