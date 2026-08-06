@@ -15,4 +15,44 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  loadLatestPosts();
 });
+
+// Pulls the latest posts from each Substack RSS feed via rss2json (a free
+// proxy that works around browsers blocking direct cross-site RSS requests).
+// If a feed fails to load, the card just falls back to its static copy —
+// nothing breaks.
+function loadLatestPosts() {
+  var lists = document.querySelectorAll('.writing-posts[data-feed]');
+  var POST_COUNT = 3;
+
+  lists.forEach(function (list) {
+    var feedUrl = list.getAttribute('data-feed');
+    var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+
+    fetch(apiUrl)
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.status !== 'ok' || !data.items || !data.items.length) {
+          throw new Error('Feed unavailable');
+        }
+        list.innerHTML = '';
+        data.items.slice(0, POST_COUNT).forEach(function (item) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = item.link;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.textContent = item.title;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      })
+      .catch(function () {
+        // Leave the list empty; CSS hides an empty <ul>, so the card
+        // quietly shows just its static description and Substack link.
+        list.innerHTML = '';
+      });
+  });
+}
