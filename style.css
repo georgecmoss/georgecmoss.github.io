@@ -850,6 +850,20 @@ a.radar-item:hover {
   margin: 0 0 1rem;
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--paper-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.icon-inline {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--amber);
+  vertical-align: -3px;
+  margin-right: 0.45em;
+}
+.now-list .icon-inline {
+  margin-right: 0.6em;
 }
 .uses-list {
   list-style: none;
@@ -867,6 +881,13 @@ a.radar-item:hover {
   color: var(--paper-ink);
   font-weight: 600;
   margin-right: 0.3rem;
+}
+.favorite-books-list li {
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--amber);
+  color: var(--paper-ink);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
 }
 
 /* ---------- Now page ---------- */
