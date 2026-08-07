@@ -16,22 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  var moreToggle = document.querySelector('.nav-more-toggle');
-  var moreItem = document.querySelector('.nav-more');
-  if (moreToggle && moreItem) {
-    moreToggle.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var isOpen = moreItem.classList.toggle('open');
-      moreToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    document.addEventListener('click', function (e) {
-      if (!moreItem.contains(e.target)) {
-        moreItem.classList.remove('open');
-        moreToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
   var themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
