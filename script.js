@@ -172,11 +172,13 @@ function loadGoodreads() {
 // history, so this can't be pulled live and accurately. Edit these
 // numbers by hand whenever you want the chart to reflect reality.
 var booksReadByYear = {
-  2022: 8,
-  2023: 14,
-  2024: 11,
-  2025: 16,
-  2026: 9
+  2020: 61,
+  2021: 33,
+  2022: 33,
+  2023: 26,
+  2024: 20,
+  2025: 28,
+  2026: 17
 };
 
 function renderBooksChart() {
