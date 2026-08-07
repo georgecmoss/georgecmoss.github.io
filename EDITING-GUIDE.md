@@ -11,16 +11,15 @@ text changes.
 |---|---|
 | `index.html` | Hero name/tagline, About bio, On My Radar cards, Writing section, Work case studies, Contact copy |
 | `resources.html` | "How I Learn" write-up and cadence list. (Reading list is automatic, pulls from your Goodreads shelf, nothing to edit there.) |
-| `now.html` | The "what I'm focused on" list, meant to be updated often |
+| `now.html` | "Active Pursuits" list, plus Travel and Events, meant to be updated often |
 | `uses.html` | Hardware / Software / Work tools lists |
-| `coming-up.html` | Travel / Events / Goals, still needs your real entries |
 | `thank-you.html` | Message shown after someone submits the contact form |
 | `404.html` | Message shown for a broken link |
 
 ## Sections still using placeholder text
 
-- **Coming Up** (`coming-up.html`) — all three lists (Travel, Events,
-  Goals) are placeholders, add your real plans
+None right now, everything's filled in. New sections you add later will
+need real content, obviously.
 
 ## The one syntax quirk
 
