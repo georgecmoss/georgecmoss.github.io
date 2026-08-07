@@ -72,8 +72,15 @@
         <li><a href="#radar">On My Radar</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="#work">Work</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="now.html">Now</a></li>
+        <li class="nav-more">
+          <button class="nav-more-toggle" aria-expanded="false" aria-controls="moreMenu">More <span class="caret">&#9662;</span></button>
+          <ul class="nav-more-menu" id="moreMenu">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="uses.html">Uses</a></li>
+            <li><a href="now.html">Now</a></li>
+            <li><a href="coming-up.html">Coming Up</a></li>
+          </ul>
+        </li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
@@ -146,23 +153,23 @@
       <h2 class="section-title">What's catching my eye lately</h2>
       <p class="section-lede section-lede-dark">A running, occasionally-updated list of what I'm reading up on and thinking about.</p>
 
-      <!-- Swap these four for whatever you're actually into right now. Each one is just a topic + a line on why. -->
+      <!-- Update this list as your interests shift. -->
       <div class="radar-grid">
         <div class="radar-item">
           <h3>Grid flexibility markets</h3>
           <p>How utilities are pricing and procuring demand flexibility as distributed energy resources scale.</p>
         </div>
         <div class="radar-item">
-          <h3>UK vs. US EV policy</h3>
-          <p>Comparing incentive design and charging infrastructure rollout on either side of the Atlantic.</p>
+          <h3>Cost of living &amp; energy efficiency</h3>
+          <p>How rising costs are reshaping the way people heat, cool, and use energy at home, and just how uneven efficient heating and cooling still is.</p>
         </div>
         <div class="radar-item">
           <h3>15-minute cities &amp; urban livability</h3>
           <p>What makes a neighborhood actually walkable, and where London gets it right.</p>
         </div>
         <div class="radar-item">
-          <h3>Personal finance for expats</h3>
-          <p>Navigating investing and tax across two countries after the move to London.</p>
+          <h3>Adjusting to a new culture</h3>
+          <p>Building routines from scratch, exploring a new city, and what starting over actually looks like.</p>
         </div>
       </div>
     </div>
@@ -287,8 +294,14 @@
 
       <p class="contact-alt">
         Prefer email? <a href="mailto:moss.george.c@gmail.com">moss.george.c@gmail.com</a> &middot;
-        <a href="https://www.linkedin.com/in/georgecmoss/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/georgecmoss/" target="_blank" rel="noopener">LinkedIn</a> &middot;
+        <a href="contact.vcf" download>Save contact (.vcf)</a>
       </p>
+
+      <div class="qr-block">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fgeorgecmoss.github.io%2F&color=241c14&bgcolor=f6efe4&margin=10" alt="QR code linking to georgecmoss.github.io" width="140" height="140" loading="lazy">
+        <p>Scan to open this site, handy for business cards or a resume footer.</p>
+      </div>
     </div>
   </section>
 

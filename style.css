@@ -181,6 +181,62 @@ a { color: inherit; }
 }
 .nav-cta:hover { opacity: 0.9; color: var(--cream-text) !important; }
 
+.nav-more {
+  position: relative;
+}
+.nav-more-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--cream-text-dim);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+.nav-more-toggle:hover { color: var(--amber-bright); }
+.nav-more-toggle .caret {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+.nav-more.open .nav-more-toggle .caret { transform: rotate(180deg); }
+
+.nav-more-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translate(-50%, -6px);
+  background: var(--ink);
+  border: 1px solid rgba(161, 98, 7, 0.3);
+  border-radius: var(--radius);
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 20;
+}
+.nav-more.open .nav-more-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+.nav-more-menu li { width: 100%; }
+.nav-more-menu a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--cream-text-dim);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-more-menu a:hover { color: var(--amber-bright); }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -772,4 +828,26 @@ a.radar-item:hover {
   }
   .nav-cta { border-radius: 0; text-align: center; }
   .work-item-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+
+  .nav-more-toggle {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+  }
+  .nav-more-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 0;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.2s ease;
+  }
+  .nav-more.open .nav-more-menu { max-height: 220px; }
+  .nav-more-menu a { padding: 0.75rem 1.5rem 0.75rem 2.5rem; }
 }
