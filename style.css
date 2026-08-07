@@ -479,6 +479,32 @@ a.radar-item:hover {
   color: var(--cream-text-dim);
   margin: 0 0 1.25rem;
 }
+
+.start-here {
+  display: block;
+  text-decoration: none;
+  background: rgba(217, 130, 15, 0.1);
+  border: 1px solid rgba(217, 130, 15, 0.4);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 1.25rem;
+}
+.start-here-tag {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--amber-bright);
+  margin-bottom: 0.25rem;
+}
+.start-here-title {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--cream-text);
+  line-height: 1.4;
+}
+.start-here:hover .start-here-title { color: var(--amber-bright); }
 .writing-link {
   font-size: 0.9rem;
   color: var(--amber-bright);
@@ -503,6 +529,26 @@ a.radar-item:hover {
   line-height: 1.4;
 }
 .writing-posts li a:hover { color: var(--amber-bright); }
+.writing-posts .post-date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cream-text-dim);
+  margin-top: 0.15rem;
+}
+.writing-posts .post-new-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  background: var(--amber-bright);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
 .writing-posts .feed-error {
   font-size: 0.85rem;
   color: var(--cream-text-dim);

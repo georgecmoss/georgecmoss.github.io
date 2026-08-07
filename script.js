@@ -101,6 +101,24 @@ function loadLatestPosts() {
           a.rel = 'noopener';
           a.textContent = item.title;
           li.appendChild(a);
+
+          if (item.pubDate) {
+            var d = new Date(item.pubDate);
+            var daysOld = (Date.now() - d.getTime()) / 86400000;
+
+            var meta = document.createElement('span');
+            meta.className = 'post-date';
+            meta.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            li.appendChild(meta);
+
+            if (daysOld <= 7) {
+              var badge = document.createElement('span');
+              badge.className = 'post-new-badge';
+              badge.textContent = 'New';
+              li.appendChild(badge);
+            }
+          }
+
           list.appendChild(li);
         });
       })
