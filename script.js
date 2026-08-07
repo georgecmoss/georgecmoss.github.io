@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   loadLatestPosts();
   loadGoodreads();
+  renderBooksChart();
   initEasterEgg();
 });
 
@@ -166,7 +167,7 @@ function loadGoodreads() {
         if (item.pubDate) {
           var p = document.createElement('p');
           var d = new Date(item.pubDate);
-          p.textContent = 'Added ' + d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+          p.textContent = 'Read ' + d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
           card.appendChild(p);
         }
 
@@ -180,4 +181,42 @@ function loadGoodreads() {
         '<p>Check my <a href="' + profileUrl + '" target="_blank" rel="noopener">Goodreads profile</a> directly.</p>' +
         '</div>';
     });
+}
+
+// Books read per year. Goodreads' RSS feed (used above for the reading
+// list) only returns your ~20 most recent shelf additions, not full
+// history, so this can't be pulled live and accurately. Edit these
+// numbers by hand whenever you want the chart to reflect reality.
+var booksReadByYear = {
+  2020: 61,
+  2021: 33,
+  2022: 33,
+  2023: 26,
+  2024: 20,
+  2025: 28,
+  2026: 17
+};
+
+function renderBooksChart() {
+  var container = document.getElementById('books-chart');
+  if (!container) return;
+
+  var years = Object.keys(booksReadByYear);
+  var counts = years.map(function (y) { return booksReadByYear[y]; });
+  var max = Math.max.apply(null, counts);
+
+  var html = '<div class="books-chart-bars">';
+  years.forEach(function (year) {
+    var count = booksReadByYear[year];
+    var pct = max > 0 ? Math.round((count / max) * 100) : 0;
+    html +=
+      '<div class="books-chart-col">' +
+      '<span class="books-chart-count">' + count + '</span>' +
+      '<div class="books-chart-bar" style="height:' + pct + '%"></div>' +
+      '<span class="books-chart-year">' + year + '</span>' +
+      '</div>';
+  });
+  html += '</div>';
+
+  container.innerHTML = html;
 }

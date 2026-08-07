@@ -428,6 +428,19 @@ a.radar-item:hover {
   transform: translateY(-2px);
   border-left-color: var(--ember);
 }
+
+/* When a radar-item card sits inside a dark section (e.g. the Goodreads
+   reading list), flip its text to the light-on-dark pairing instead of
+   the default dark-on-light one. */
+.section-dark .radar-item {
+  border-color: rgba(241, 233, 216, 0.15);
+}
+.section-dark .radar-item h3 {
+  color: var(--cream-text);
+}
+.section-dark .radar-item p {
+  color: var(--cream-text-dim);
+}
 .radar-item h3 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -560,6 +573,47 @@ a.radar-item:hover {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 2.5rem;
+}
+
+/* ---------- Books-per-year chart ---------- */
+.books-chart-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(241, 233, 216, 0.15);
+}
+.books-chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  height: 160px;
+  margin-top: 1rem;
+}
+.books-chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+}
+.books-chart-count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--cream-text-dim);
+  margin-bottom: 0.4rem;
+}
+.books-chart-bar {
+  width: 100%;
+  max-width: 42px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, var(--amber-bright), var(--ember));
+  min-height: 4px;
+}
+.books-chart-year {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cream-text-dim);
+  margin-top: 0.5rem;
 }
 .subscribe-label {
   font-family: var(--font-mono);
