@@ -143,7 +143,7 @@ function loadGoodreads() {
   var profileUrl = 'https://www.goodreads.com/user/show/' + userId;
   var feedUrl = 'https://www.goodreads.com/review/list_rss/' + userId + '?shelf=' + encodeURIComponent(shelf);
   var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
-  var BOOK_COUNT = 8;
+  var BOOK_COUNT = 6;
 
   fetch(apiUrl)
     .then(function (res) { return res.json(); })
@@ -188,13 +188,11 @@ function loadGoodreads() {
 // history, so this can't be pulled live and accurately. Edit these
 // numbers by hand whenever you want the chart to reflect reality.
 var booksReadByYear = {
-  2020: 61,
-  2021: 33,
-  2022: 33,
-  2023: 26,
-  2024: 20,
-  2025: 28,
-  2026: 17
+  2022: 8,
+  2023: 14,
+  2024: 11,
+  2025: 16,
+  2026: 9
 };
 
 function renderBooksChart() {
