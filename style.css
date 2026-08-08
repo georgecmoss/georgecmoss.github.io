@@ -173,6 +173,13 @@ a { color: inherit; }
   transition: color 0.2s ease;
 }
 .nav-links a:hover { color: var(--amber-bright); }
+
+.nav-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(161, 98, 7, 0.3);
+  align-self: center;
+}
 .nav-cta {
   color: var(--cream-text) !important;
   background: linear-gradient(90deg, var(--amber) 0%, var(--ember) 100%);
@@ -777,6 +784,22 @@ a.radar-item:hover {
 }
 .footer-links a:hover { color: var(--amber-bright); }
 
+.footer-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  margin: 0 0 0.6rem;
+}
+.footer-links-external a::after {
+  content: '\2197';
+  display: inline-block;
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
 /* ---------- Resources: cadence list ---------- */
 .cadence-list {
   list-style: none;
@@ -911,6 +934,11 @@ a.radar-item:hover {
 @media (max-width: 900px) {
   .section { padding: 4rem 0; }
   .nav-toggle { display: flex; }
+  .nav-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0.4rem 0;
+  }
   .nav-links {
     position: absolute;
     top: 100%;
