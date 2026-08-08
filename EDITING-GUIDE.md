@@ -32,6 +32,31 @@ punctuation, quotes, numbers — you can type as-is.
 Use Ctrl+F (or Cmd+F) in GitHub's editor to search for a phrase you
 know is nearby, rather than scrolling through the whole file.
 
+## Custom domain: georgecmoss.com (planned, not live yet)
+
+I generated a `CNAME` file (just contains the text `georgecmoss.com`)
+that's ready to upload once you actually own the domain. Do NOT upload
+it before then, it would break the live site by pointing GitHub Pages
+at a domain that doesn't exist yet.
+
+When you're ready, in order:
+
+1. Buy `georgecmoss.com` from a registrar (Namecheap, Cloudflare, etc.)
+2. Add the DNS records GitHub requires (4 A records for the root
+   domain, pointing to GitHub's IPs: 185.199.108.153, .109.153,
+   .110.153, .111.153, plus a CNAME record for "www" pointing to
+   georgecmoss.github.io)
+3. Upload the `CNAME` file to your repo root
+4. In your repo, go to Settings, Pages, Custom domain, enter
+   georgecmoss.com, save, then tick "Enforce HTTPS" once it's
+   available (can take a few hours)
+5. **Come back and tell me it's live** — I'll then update every
+   hardcoded `georgecmoss.github.io` reference across the site
+   (canonical tags, the OG share image, sitemap.xml, robots.txt, the
+   vCard, the contact form's redirect) to point at the new domain in
+   one batch. Doing this before DNS is live would leave those pointing
+   at a dead link in the meantime, so it's worth waiting for.
+
 ## QR code (for your own use, not on the live site)
 
 If you want a QR code for a business card, resume footer, or conference
