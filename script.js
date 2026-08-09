@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadLatestPosts();
   loadGoodreads();
   renderBooksChart();
+  initSlideshows();
   initEasterEgg();
 });
 
@@ -203,4 +204,33 @@ function renderBooksChart() {
   html += '</div>';
 
   container.innerHTML = html;
+}
+
+// Simple prev/next/dot-driven slideshow for the small photo galleries
+// inside Work entries. Supports any number of slides, though currently
+// only used with two.
+function initSlideshows() {
+  document.querySelectorAll('[data-slideshow]').forEach(function (root) {
+    var slides = root.querySelectorAll('.slide');
+    var dots = root.querySelectorAll('.dot');
+    var prevBtn = root.querySelector('.slide-prev');
+    var nextBtn = root.querySelector('.slide-next');
+    var current = 0;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('active', i === current);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { show(i); });
+    });
+  });
 }
