@@ -139,23 +139,35 @@ function loadGoodreads() {
       container.innerHTML = '';
       data.items.slice(0, BOOK_COUNT).forEach(function (item) {
         var card = document.createElement('a');
-        card.className = 'radar-item';
+        card.className = 'radar-item radar-item-book';
         card.href = item.link;
         card.target = '_blank';
         card.rel = 'noopener';
         card.style.borderColor = 'rgba(161,98,7,0.25)';
 
+        if (item.thumbnail) {
+          var img = document.createElement('img');
+          img.src = item.thumbnail;
+          img.alt = '';
+          img.loading = 'lazy';
+          card.appendChild(img);
+        }
+
+        var info = document.createElement('div');
+        info.className = 'book-info';
+
         var h3 = document.createElement('h3');
         h3.textContent = item.title;
-        card.appendChild(h3);
+        info.appendChild(h3);
 
         if (item.pubDate) {
           var p = document.createElement('p');
           var d = new Date(item.pubDate);
           p.textContent = 'Read ' + d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
-          card.appendChild(p);
+          info.appendChild(p);
         }
 
+        card.appendChild(info);
         container.appendChild(card);
       });
     })

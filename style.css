@@ -380,6 +380,22 @@ a.radar-item:hover {
   border-left-color: var(--ember);
 }
 
+.radar-item-book {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+.radar-item-book img {
+  width: 46px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+.radar-item-book .book-info {
+  min-width: 0;
+}
+
 /* When a radar-item card sits inside a dark section (e.g. the Goodreads
    reading list), flip its text to the light-on-dark pairing instead of
    the default dark-on-light one. */
