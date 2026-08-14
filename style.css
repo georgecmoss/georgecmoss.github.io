@@ -12,6 +12,7 @@
   --ember-bright: #d92626;
   --cream-text: #f1e9d8;
   --cream-text-dim: #cfc2a8;
+  --on-gradient-text: #f1e9d8;
 
   --font-display: 'Instrument Serif', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -181,7 +182,7 @@ a { color: inherit; }
   align-self: center;
 }
 .nav-cta {
-  color: var(--cream-text) !important;
+  color: var(--on-gradient-text) !important;
   background: linear-gradient(90deg, var(--amber) 0%, var(--ember) 100%);
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
@@ -319,7 +320,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary {
   background: linear-gradient(90deg, var(--amber) 0%, var(--ember) 100%);
-  color: var(--cream-text);
+  color: var(--on-gradient-text);
 }
 .btn-primary:hover { opacity: 0.92; }
 .btn-ghost {
@@ -437,9 +438,20 @@ a.radar-item:hover {
   padding: 2rem;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
+.writing-card-professional {
+  border-color: rgba(161, 98, 7, 0.45);
+}
+.writing-card-personal {
+  border-color: rgba(169, 7, 7, 0.45);
+}
 .writing-card:hover {
-  border-color: var(--amber-bright);
   transform: translateY(-2px);
+}
+.writing-card-professional:hover {
+  border-color: var(--amber-bright);
+}
+.writing-card-personal:hover {
+  border-color: var(--ember-bright);
 }
 .writing-kicker {
   font-family: var(--font-mono);
@@ -688,8 +700,30 @@ a.radar-item:hover {
 .skills-tags {
   margin-top: 0 !important;
 }
-.skills-tags li {
-  font-size: 0.72rem;
+.skills-cloud {
+  align-items: center;
+}
+.skills-cloud li {
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.skills-cloud .skill-lg {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+  color: var(--amber-bright);
+  border-color: rgba(161, 98, 7, 0.7);
+}
+.skills-cloud .skill-md {
+  font-size: 0.76rem;
+  padding: 0.32rem 0.75rem;
+  color: var(--amber);
+  border-color: rgba(161, 98, 7, 0.4);
+}
+.skills-cloud .skill-sm {
+  font-size: 0.62rem;
+  padding: 0.22rem 0.55rem;
+  color: var(--paper-ink-soft);
+  border-color: rgba(161, 98, 7, 0.25);
 }
 .skills-certs {
   margin: 1.25rem 0 0;
@@ -981,6 +1015,14 @@ a.radar-item:hover {
   color: var(--paper-ink-soft);
   margin-top: 0.15rem;
 }
+.book-why {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--paper-ink-soft);
+  margin-top: 0.35rem;
+}
 
 .section-divider {
   border-top: 1px solid var(--paper-dim);
@@ -992,6 +1034,25 @@ a.radar-item:hover {
 .radar-item-compact {
   padding: 1.1rem 1.25rem;
 }
+
+.radar-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 0 2.75rem;
+}
+.radar-carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.radar-carousel-track .radar-item {
+  flex: 0 0 100%;
+  min-width: 0;
+  min-height: 130px;
+  margin: 0;
+}
+.radar-carousel .carousel-prev { left: 0; }
+.radar-carousel .carousel-next { right: 0; }
+.radar-carousel .carousel-dots { margin-top: 1.25rem; }
 
 /* ---------- Now page ---------- */
 .now-list {

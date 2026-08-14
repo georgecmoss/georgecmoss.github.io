@@ -73,7 +73,7 @@
         <li><a href="#work">Work</a></li>
         <li class="nav-divider" aria-hidden="true"></li>
         <li><a href="resources.html">Resources</a></li>
-        <li><a href="uses.html">Uses</a></li>
+        <li><a href="uses.html">My Toolkit</a></li>
         <li><a href="now.html">Now &amp; Next</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
@@ -143,22 +143,32 @@
       <p class="section-lede section-lede-dark" style="margin-bottom: 1.5rem;">A running, occasionally-updated list of what I'm reading up on and thinking about.</p>
 
       <!-- Update this list as your interests shift. -->
-      <div class="radar-grid" style="gap: 1rem;">
-        <div class="radar-item radar-item-compact">
-          <h3>Grid flexibility markets</h3>
-          <p>How utilities are pricing and procuring demand flexibility as distributed energy resources scale.</p>
+      <div class="radar-carousel" data-carousel data-autorotate="5000">
+        <div class="radar-carousel-track">
+          <div class="radar-item radar-item-compact">
+            <h3>Grid flexibility markets</h3>
+            <p>How utilities are pricing and procuring demand flexibility as distributed energy resources scale.</p>
+          </div>
+          <div class="radar-item radar-item-compact">
+            <h3>Cost of living &amp; energy efficiency</h3>
+            <p>How rising costs are reshaping the way people heat, cool, and use energy at home.</p>
+          </div>
+          <div class="radar-item radar-item-compact">
+            <h3>15-minute cities &amp; urban livability</h3>
+            <p>What makes a neighborhood actually walkable, and where London gets it right.</p>
+          </div>
+          <div class="radar-item radar-item-compact">
+            <h3>Adjusting to a new culture</h3>
+            <p>Building routines from scratch, exploring a new city, and what starting over actually looks like.</p>
+          </div>
         </div>
-        <div class="radar-item radar-item-compact">
-          <h3>Cost of living &amp; energy efficiency</h3>
-          <p>How rising costs are reshaping the way people heat, cool, and use energy at home.</p>
-        </div>
-        <div class="radar-item radar-item-compact">
-          <h3>15-minute cities &amp; urban livability</h3>
-          <p>What makes a neighborhood actually walkable, and where London gets it right.</p>
-        </div>
-        <div class="radar-item radar-item-compact">
-          <h3>Adjusting to a new culture</h3>
-          <p>Building routines from scratch, exploring a new city, and what starting over actually looks like.</p>
+        <button type="button" class="slide-nav carousel-prev" aria-label="Previous topic">&#8249;</button>
+        <button type="button" class="slide-nav carousel-next" aria-label="Next topic">&#8250;</button>
+        <div class="slide-dots carousel-dots">
+          <button type="button" class="dot active" aria-label="Show topic 1"></button>
+          <button type="button" class="dot" aria-label="Show topic 2"></button>
+          <button type="button" class="dot" aria-label="Show topic 3"></button>
+          <button type="button" class="dot" aria-label="Show topic 4"></button>
         </div>
       </div>
     </div>
@@ -171,7 +181,7 @@
       <p class="section-lede">One on the energy transition, one on everything else.</p>
 
       <div class="writing-grid">
-        <div class="writing-card">
+        <div class="writing-card writing-card-professional">
           <span class="writing-kicker">Professional</span>
           <h3>Energy at the Edge</h3>
           <p>Articles about utilities, customers, and the direction of distributed grids.</p>
@@ -182,7 +192,7 @@
           <ul class="writing-posts" id="feed-energy" data-feed="https://energyattheedge.substack.com/feed" aria-live="polite"></ul>
           <a class="writing-link" href="https://energyattheedge.substack.com/" target="_blank" rel="noopener">Read on Substack &rarr;</a>
         </div>
-        <div class="writing-card">
+        <div class="writing-card writing-card-personal">
           <span class="writing-kicker">Personal</span>
           <h3>G &amp; The World</h3>
           <p>A personal newsletter centered on life, travel, and whatever's catching my attention.</p>
@@ -216,25 +226,26 @@
 
       <div class="skills-block">
         <p class="uses-heading" style="border-bottom:none; padding-bottom:0; margin-bottom:0.6rem;">Functional</p>
-        <ul class="work-tags skills-tags">
-          <li>Growth &amp; Innovation Strategy</li>
-          <li>Portfolio Planning</li>
-          <li>Stakeholder Management</li>
-          <li>Due Diligence</li>
-          <li>Roadmapping</li>
-          <li>Project Management</li>
-          <li>Agile / Scrum</li>
-          <li>Customer Journey Mapping</li>
-          <li>Data &amp; Segmentation Analysis</li>
+        <!-- Sizing reflects how central each skill is to your work: skill-lg, skill-md, skill-sm. Move a tag between classes to re-weight it. -->
+        <ul class="work-tags skills-tags skills-cloud">
+          <li class="skill-lg">Growth &amp; Innovation Strategy</li>
+          <li class="skill-lg">Stakeholder Management</li>
+          <li class="skill-lg">Portfolio Planning</li>
+          <li class="skill-md">Project Management</li>
+          <li class="skill-md">Agile / Scrum</li>
+          <li class="skill-md">Roadmapping</li>
+          <li class="skill-sm">Due Diligence</li>
+          <li class="skill-sm">Customer Journey Mapping</li>
+          <li class="skill-sm">Data &amp; Segmentation Analysis</li>
         </ul>
         <p class="uses-heading" style="border-bottom:none; padding-bottom:0; margin: 1.25rem 0 0.6rem;">Industry</p>
-        <ul class="work-tags skills-tags">
-          <li>Energy Transition</li>
-          <li>Grid Flexibility &amp; DSOs</li>
-          <li>Smart Grid</li>
-          <li>EV &amp; Charging Infrastructure</li>
-          <li>Energy Efficiency &amp; Rates</li>
-          <li>Regulatory &amp; Policy Environment</li>
+        <ul class="work-tags skills-tags skills-cloud">
+          <li class="skill-lg">Energy Transition</li>
+          <li class="skill-lg">Grid Flexibility &amp; DSOs</li>
+          <li class="skill-md">Smart Grid</li>
+          <li class="skill-md">Regulatory &amp; Policy Environment</li>
+          <li class="skill-sm">EV &amp; Charging Infrastructure</li>
+          <li class="skill-sm">Energy Efficiency &amp; Rates</li>
         </ul>
         <p class="skills-certs">Clean Energy Leadership Fellow (2023) &middot; SAFe 6 PO/PM Certified &middot; EY P&amp;U Silver Badge</p>
       </div>
@@ -364,7 +375,7 @@
         <li><a href="#writing">Writing</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="resources.html">Resources</a></li>
-        <li><a href="uses.html">Uses</a></li>
+        <li><a href="uses.html">My Toolkit</a></li>
         <li><a href="now.html">Now &amp; Next</a></li>
       </ul>
     </div>
