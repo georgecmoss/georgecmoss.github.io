@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadGoodreads();
   renderBooksChart();
   initSlideshows();
+  initCarousels();
   initEasterEgg();
 });
 
@@ -244,5 +245,59 @@ function initSlideshows() {
     dots.forEach(function (dot, i) {
       dot.addEventListener('click', function () { show(i); });
     });
+  });
+}
+
+// Horizontal, auto-rotating carousel (used for On My Radar). Advances on
+// a timer, pauses while the mouse or keyboard focus is inside it, and
+// any manual interaction (arrow/dot) restarts the timer from zero so it
+// doesn't jump right after someone navigates by hand.
+function initCarousels() {
+  document.querySelectorAll('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('.radar-carousel-track');
+    var slides = root.querySelectorAll('.radar-carousel-track > *');
+    var dots = root.querySelectorAll('.carousel-dots .dot');
+    var prevBtn = root.querySelector('.carousel-prev');
+    var nextBtn = root.querySelector('.carousel-next');
+    var interval = parseInt(root.getAttribute('data-autorotate'), 10) || 5000;
+    var current = 0;
+    var timer = null;
+
+    function render() {
+      var step = 100 / slides.length;
+      track.style.transform = 'translateX(-' + (current * step) + '%)';
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      render();
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(function () { show(current + 1); }, interval);
+    }
+    function stop() {
+      if (timer) clearInterval(timer);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); start(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); start(); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { show(i); start(); });
+    });
+
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+
+    render();
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      start();
+    }
   });
 }
