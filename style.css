@@ -1039,6 +1039,9 @@ a.radar-item:hover {
   position: relative;
   overflow: hidden;
   padding: 0 2.75rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .radar-carousel-track {
   display: flex;
