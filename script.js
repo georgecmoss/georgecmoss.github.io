@@ -263,9 +263,29 @@ function initCarousels() {
     var current = 0;
     var timer = null;
 
+    // Explicitly size the track and each slide by pixel width rather than
+    // leaning on flexbox percentage math against an overflowing container,
+    // which browsers resolve inconsistently. Recomputed on resize.
+    function getSlideWidth() {
+      var rootStyles = window.getComputedStyle(root);
+      var paddingLeft = parseFloat(rootStyles.paddingLeft) || 0;
+      var paddingRight = parseFloat(rootStyles.paddingRight) || 0;
+      return root.clientWidth - paddingLeft - paddingRight;
+    }
+
+    function layout() {
+      var slideWidth = getSlideWidth();
+      track.style.width = (slideWidth * slides.length) + 'px';
+      slides.forEach(function (slide) {
+        slide.style.flex = '0 0 auto';
+        slide.style.width = slideWidth + 'px';
+      });
+      render();
+    }
+
     function render() {
-      var step = 100 / slides.length;
-      track.style.transform = 'translateX(-' + (current * step) + '%)';
+      var slideWidth = getSlideWidth();
+      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
       dots.forEach(function (dot, i) {
         dot.classList.toggle('active', i === current);
       });
@@ -294,8 +314,9 @@ function initCarousels() {
     root.addEventListener('mouseleave', start);
     root.addEventListener('focusin', stop);
     root.addEventListener('focusout', start);
+    window.addEventListener('resize', layout);
 
-    render();
+    layout();
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       start();
     }
