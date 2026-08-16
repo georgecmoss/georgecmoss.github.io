@@ -248,14 +248,13 @@ function initSlideshows() {
   });
 }
 
-// Horizontal, auto-rotating carousel (used for On My Radar). Advances on
-// a timer, pauses while the mouse or keyboard focus is inside it, and
-// any manual interaction (arrow/dot) restarts the timer from zero so it
-// doesn't jump right after someone navigates by hand.
+// Auto-rotating carousel (used for On My Radar). Just swaps which slide
+// has the .active class, same simple show/hide pattern as the Work
+// photo slideshow, plus a timer that pauses on hover/focus and restarts
+// after any manual interaction.
 function initCarousels() {
   document.querySelectorAll('[data-carousel]').forEach(function (root) {
-    var track = root.querySelector('.radar-carousel-track');
-    var slides = root.querySelectorAll('.radar-carousel-track > *');
+    var slides = root.querySelectorAll('.slide');
     var dots = root.querySelectorAll('.carousel-dots .dot');
     var prevBtn = root.querySelector('.carousel-prev');
     var nextBtn = root.querySelector('.carousel-next');
@@ -263,29 +262,10 @@ function initCarousels() {
     var current = 0;
     var timer = null;
 
-    // Explicitly size the track and each slide by pixel width rather than
-    // leaning on flexbox percentage math against an overflowing container,
-    // which browsers resolve inconsistently. Recomputed on resize.
-    function getSlideWidth() {
-      var rootStyles = window.getComputedStyle(root);
-      var paddingLeft = parseFloat(rootStyles.paddingLeft) || 0;
-      var paddingRight = parseFloat(rootStyles.paddingRight) || 0;
-      return root.clientWidth - paddingLeft - paddingRight;
-    }
-
-    function layout() {
-      var slideWidth = getSlideWidth();
-      track.style.width = (slideWidth * slides.length) + 'px';
-      slides.forEach(function (slide) {
-        slide.style.flex = '0 0 auto';
-        slide.style.width = slideWidth + 'px';
-      });
-      render();
-    }
-
     function render() {
-      var slideWidth = getSlideWidth();
-      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('active', i === current);
+      });
       dots.forEach(function (dot, i) {
         dot.classList.toggle('active', i === current);
       });
@@ -314,9 +294,8 @@ function initCarousels() {
     root.addEventListener('mouseleave', start);
     root.addEventListener('focusin', stop);
     root.addEventListener('focusout', start);
-    window.addEventListener('resize', layout);
 
-    layout();
+    render();
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       start();
     }

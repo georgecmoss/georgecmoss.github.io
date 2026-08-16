@@ -1037,25 +1037,42 @@ a.radar-item:hover {
 
 .radar-carousel {
   position: relative;
-  overflow: hidden;
   padding: 0 2.75rem;
-  max-width: 480px;
+  max-width: 560px;
   margin-left: auto;
   margin-right: auto;
 }
-.radar-carousel-track {
+.radar-peek-frame {
   display: flex;
-  transition: transform 0.4s ease;
+  align-items: stretch;
+  gap: 10px;
 }
-.radar-carousel-track .radar-item {
-  flex: 0 0 100%;
+.radar-peek-side {
+  flex: 0 0 22px;
+  background: var(--ink-soft);
+  border-left: 3px solid var(--amber);
+  border-radius: 4px;
+  opacity: 0.35;
+}
+.radar-carousel-track {
+  flex: 1 1 auto;
   min-width: 0;
+  position: relative;
+}
+.radar-carousel-track .slide {
+  display: none;
   min-height: 95px;
   margin: 0;
+}
+.radar-carousel-track .slide.active {
+  display: block;
 }
 .radar-carousel .carousel-prev { left: 0; }
 .radar-carousel .carousel-next { right: 0; }
 .radar-carousel .carousel-dots { margin-top: 0.75rem; }
+@media (max-width: 480px) {
+  .radar-peek-side { display: none; }
+}
 
 /* ---------- Now page ---------- */
 .now-list {
